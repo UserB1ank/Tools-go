@@ -44,7 +44,11 @@ func save() {
 			break
 		}
 	}
-	file.Close()
+	err3 := file.Close()
+	if err3 != nil {
+		fmt.Println(err3)
+		return
+	}
 }
 
 func ping(host string, wg *sync.WaitGroup) {
